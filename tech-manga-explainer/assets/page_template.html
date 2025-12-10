@@ -1,0 +1,19 @@
+<!-- 单页模板，用于循环生成每一页 -->
+<div class="page">
+    <div class="page-header">
+        <div class="page-number">{{PAGE_NUM}}</div>
+        <div class="page-title">{{PAGE_TITLE}}</div>
+    </div>
+    <div class="page-content">
+        <div class="page-image">
+            <img src="{{IMAGE_FILE}}" alt="第{{PAGE_NUM}}页">
+        </div>
+        <div class="page-text">
+            {{DIALOGUES}}
+            <div class="tech-point">
+                <h4>技术要点</h4>
+                <p>{{TECH_POINT}}</p>
+            </div>
+        </div>
+    </div>
+</div>

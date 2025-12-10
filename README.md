@@ -12,6 +12,7 @@
 | Skill | Description | Status |
 |-------|-------------|--------|
 | [🎨 food-diorama-skill](./food-diorama-skill/) | 生成中国城市 3D 美食盲盒图像 | ✅ v1.0.0 |
+| [📚 tech-manga-explainer](./tech-manga-explainer/) | 生成技术科普漫画，用对话形式解释复杂技术概念 | ✅ v1.0.0 |
 
 ## 🚀 Quick Start
 
@@ -27,10 +28,13 @@ echo "GEMINI_API_KEY=your_key" > ~/.nanobanana.env
 
 # 4. Use in Claude
 Ask: "请用美食盲盒技能为我生成温州的美食场景"
+# or
+Ask: "用漫画解释一下 Kubernetes Pod 是什么"
 ```
 
 ## 🎨 Preview
 
+### Food Diorama Skill
 <p align="center">
   <img src="./food-diorama-skill/assets/温州-diorama.png" width="200"/>
   <img src="./food-diorama-skill/assets/南京-diorama.png" width="200"/>
@@ -38,9 +42,16 @@ Ask: "请用美食盲盒技能为我生成温州的美食场景"
   <img src="./food-diorama-skill/assets/新疆-diorama.png" width="200"/>
 </p>
 
+### Tech Manga Explainer
+<p align="center">
+  <img src="./tech-manga-explainer/assets/火影风格示例.png" width="200"/>
+  <img src="./tech-manga-explainer/assets/程序员风格示例.png" width="200"/>
+</p>
+
 ## 📖 Documentation
 
 - [Food Diorama Skill 使用指南](./food-diorama-skill/README.md)
+- [Tech Manga Explainer 使用指南](./tech-manga-explainer/README.md)
 
 
 ## 👤 Author

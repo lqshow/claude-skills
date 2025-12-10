@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE}} - 技术漫画</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #eee;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 40px;
+            border: 2px solid #4CAF50;
+            box-shadow: 0 0 40px rgba(76, 175, 80, 0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(76, 175, 80, 0.3);
+        }
+
+        h1 {
+            color: #4CAF50;
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(76, 175, 80, 0.3);
+        }
+
+        .subtitle {
+            color: #888;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-size: 0.95em;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        .badge.complexity {
+            background: linear-gradient(45deg, #FF9800, #F57C00);
+        }
+
+        .badge.style {
+            background: linear-gradient(45deg, #2196F3, #1976D2);
+        }
+
+        .intro-box {
+            background: rgba(76, 175, 80, 0.1);
+            border: 1px solid rgba(76, 175, 80, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .intro-box h3 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+            font-size: 1.4em;
+        }
+
+        .intro-box p {
+            color: #aaa;
+            font-size: 1.1em;
+        }
+
+        .page {
+            margin: 40px 0;
+            padding: 30px;
+            border-radius: 15px;
+            background: rgba(255,255,255,0.02);
+            border-left: 5px solid #4CAF50;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .page:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 30px rgba(76, 175, 80, 0.2);
+        }
+
+        .page:nth-child(even) {
+            border-left-color: #FF9800;
+        }
+
+        .page-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .page-number {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+            flex-shrink: 0;
+        }
+
+        .page:nth-child(even) .page-number {
+            background: linear-gradient(45deg, #FF9800, #F57C00);
+            box-shadow: 0 4px 15px rgba(255, 152, 0, 0.4);
+        }
+
+        .page-title {
+            color: #4CAF50;
+            font-size: 1.6em;
+            font-weight: bold;
+        }
+
+        .page:nth-child(even) .page-title {
+            color: #FF9800;
+        }
+
+        .page-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .page-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 2px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .page-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(76, 175, 80, 0.3);
+        }
+
+        .page-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .page-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .dialogue {
+            margin: 15px 0;
+            padding: 18px;
+            border-radius: 12px;
+            border-left: 4px solid;
+            background: rgba(255,255,255,0.03);
+        }
+
+        /* 卡卡西 - 银灰色系 */
+        .kakashi {
+            border-left-color: #78909C;
+            background: rgba(120, 144, 156, 0.08);
+        }
+
+        /* 鸣人 - 橙色系 */
+        .naruto {
+            border-left-color: #FF9800;
+            background: rgba(255, 152, 0, 0.08);
+        }
+
+        /* 码叔 - 绿色系 */
+        .mashu {
+            border-left-color: #4CAF50;
+            background: rgba(76, 175, 80, 0.08);
+        }
+
+        /* 小新 - 橙色系 */
+        .xiaoxin {
+            border-left-color: #FF9800;
+            background: rgba(255, 152, 0, 0.08);
+        }
+
+        .character-name {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .kakashi .character-name { color: #78909C; }
+        .naruto .character-name { color: #FF9800; }
+        .mashu .character-name { color: #4CAF50; }
+        .xiaoxin .character-name { color: #FF9800; }
+
+        .dialogue-content {
+            color: #ddd;
+            line-height: 1.7;
+        }
+
+        .tech-point {
+            background: rgba(33, 150, 243, 0.1);
+            border: 1px solid rgba(33, 150, 243, 0.3);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+        .tech-point h4 {
+            color: #2196F3;
+            margin-bottom: 12px;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tech-point h4::before {
+            content: "💡";
+        }
+
+        .tech-point p {
+            color: #bbb;
+            line-height: 1.7;
+        }
+
+        .tech-point code {
+            background: rgba(0,0,0,0.3);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            color: #4CAF50;
+            font-size: 0.95em;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #666;
+        }
+
+        .footer-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        @media (max-width: 768px) {
+            .page-content {
+                flex-direction: column;
+            }
+
+            .page-image, .page-text {
+                min-width: 100%;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .page-title {
+                font-size: 1.3em;
+            }
+
+            .meta-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>{{TITLE}}</h1>
+            <p class="subtitle">码叔带你学技术</p>
+            <div class="meta-info">
+                <span class="badge complexity">复杂度：{{COMPLEXITY}}</span>
+                <span class="badge">共 {{PAGE_COUNT}} 页</span>
+                <span class="badge style">画风：{{STYLE}}</span>
+            </div>
+        </header>
+
+        <div class="intro-box">
+            <h3>📖 {{ANALOGY_TITLE}}</h3>
+            <p>{{ANALOGY_DESC}}</p>
+        </div>
+
+        <!-- ===== 页面内容区域 ===== -->
+        {{PAGES}}
+        <!-- ===== 页面内容结束 ===== -->
+
+        <footer>
+            <div class="footer-icons">
+                💻 🎨 📚 🚀 💡
+            </div>
+            <p>🎨 由技术漫画生成器创作 | 让技术学习更有趣！</p>
+        </footer>
+    </div>
+</body>
+</html>

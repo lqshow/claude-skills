@@ -1,0 +1,193 @@
+{
+  "kubernetes-pod": {
+    "title": "Kubernetes Pod 入门",
+    "pages": 4,
+    "recommended_style": "manga",
+    "core_analogy": "Pod = 集装箱，Container = 货物，Node = 码头，Cluster = 港口城市",
+    "structure": [
+      {
+        "page": 1,
+        "scene": "办公室场景，小新对着电脑屏幕挠头，屏幕上显示 Kubernetes 文档，码叔端着 DEBUG 咖啡杯走过来",
+        "dialogue": "小新:码叔，这个 Pod 到底是啥？文档看得我头大|码叔:别慌，我给你打个比方你就懂了",
+        "tech_diagram": null,
+        "knowledge": "引入问题"
+      },
+      {
+        "page": 2,
+        "scene": "码叔在白板前画图讲解，白板上画着一个集装箱，里面有1-2个小箱子",
+        "dialogue": "码叔:你见过港口的集装箱吧？Pod 就像一个集装箱|小新:那 Container 呢？|码叔:Container 就是集装箱里面的货物",
+        "tech_diagram": "集装箱横截面，里面有2个小箱子，标注 Container A 和 Container B，外面大框标注 Pod",
+        "knowledge": "Pod 和 Container 的关系"
+      },
+      {
+        "page": 3,
+        "scene": "白板上画着码头全景图，多个集装箱放在码头上，旁边有吊车",
+        "dialogue": "小新:那 Node 和 Cluster 呢？|码叔:Node 是码头，Cluster 就是整个港口城市|小新:所以 K8s 就是管理这个港口的系统？|码叔:孺子可教！",
+        "tech_diagram": "港口俯视图：多个码头(Node)，每个码头有多个集装箱(Pod)，整体是一个港口(Cluster)",
+        "knowledge": "Node 和 Cluster 的概念"
+      },
+      {
+        "page": 4,
+        "scene": "小新恍然大悟，头顶有灯泡亮起的特效，码叔喝着咖啡微笑",
+        "dialogue": "小新:我懂了！以后看到 Pod 我就想象成集装箱就行！|码叔:没错，记住这个比喻，后面学 Deployment、Service 就简单了",
+        "tech_diagram": null,
+        "knowledge": "总结确认"
+      }
+    ]
+  },
+
+  "n8n-workflow": {
+    "title": "n8n 工作流入门",
+    "pages": 4,
+    "recommended_style": "manga",
+    "core_analogy": "n8n = 乐高积木工厂，节点 = 积木块，连线 = 传送带",
+    "structure": [
+      {
+        "page": 1,
+        "scene": "小新看着一堆重复性工作发愁，桌上堆满文件，码叔路过",
+        "dialogue": "小新:每天都要手动复制这些数据到表格，烦死了|码叔:你听说过 n8n 吗？可以让这些活自动跑",
+        "tech_diagram": null,
+        "knowledge": "引入自动化需求"
+      },
+      {
+        "page": 2,
+        "scene": "码叔打开电脑展示 n8n 界面，屏幕上有几个彩色节点连接在一起",
+        "dialogue": "码叔:n8n 就像乐高积木，每个节点是一块积木|小新:那我把积木拼起来就能自动化了？|码叔:对！比如这个节点读取邮件，那个节点写入表格",
+        "tech_diagram": "3个节点用箭头连接：邮件图标 → 处理图标 → 表格图标",
+        "knowledge": "节点和连线的概念"
+      },
+      {
+        "page": 3,
+        "scene": "小新盯着屏幕操作，码叔在旁边指导",
+        "dialogue": "小新:那数据是怎么从一个节点传到下一个的？|码叔:就像工厂的传送带，上一个节点的输出就是下一个节点的输入",
+        "tech_diagram": "传送带示意图，包裹从一个站点传到下一个站点",
+        "knowledge": "数据流概念"
+      },
+      {
+        "page": 4,
+        "scene": "小新开心地看着工作流自动运行，码叔竖起大拇指",
+        "dialogue": "小新:太棒了！以后这些重复工作都不用我手动做了！|码叔:这就是自动化的魅力，把时间省下来做更重要的事",
+        "tech_diagram": null,
+        "knowledge": "总结价值"
+      }
+    ]
+  },
+
+  "ai-agent": {
+    "title": "AI Agent 是什么",
+    "pages": 5,
+    "recommended_style": "cyberpunk",
+    "core_analogy": "普通AI = 只会聊天的客服，Agent = 能思考和行动的助理",
+    "structure": [
+      {
+        "page": 1,
+        "scene": "未来感的办公室，小新和一个普通聊天机器人对话，机器人只会重复回答",
+        "dialogue": "小新:帮我订一张明天去北京的机票|机器人:我无法为您订票，请访问携程网站|小新:那你能干啥？",
+        "tech_diagram": null,
+        "knowledge": "传统聊天机器人的局限"
+      },
+      {
+        "page": 2,
+        "scene": "码叔走来，身后是一个更高级的全息AI助手形象",
+        "dialogue": "码叔:普通聊天机器人只能对话，Agent 不一样|小新:有什么区别？|码叔:Agent 能思考、规划、还能动手干活",
+        "tech_diagram": "对比图：左边是对话气泡，右边是大脑+手+工具",
+        "knowledge": "Agent 的核心能力"
+      },
+      {
+        "page": 3,
+        "scene": "全息投影展示 Agent 的工作循环",
+        "dialogue": "码叔:Agent 会先思考要做什么，然后拆分步骤，接着一步步执行，最后检查结果|小新:就像一个真正的助理？",
+        "tech_diagram": "循环图：思考 → 规划 → 执行 → 观察 → 思考",
+        "knowledge": "Agent Loop 概念"
+      },
+      {
+        "page": 4,
+        "scene": "Agent 助手自动操作多个系统，订票、发邮件、更新日历",
+        "dialogue": "小新:所以我说订机票，Agent 能自动帮我搞定？|码叔:没错，它会自己去查航班、比价、下单、把行程加到你的日历",
+        "tech_diagram": "Agent 连接多个工具：航班API、支付、日历、邮件",
+        "knowledge": "Agent 使用工具"
+      },
+      {
+        "page": 5,
+        "scene": "小新惊叹的表情，周围是各种 Agent 应用的全息投影",
+        "dialogue": "小新:这也太强了！那未来人人都能有一个 AI 助理？|码叔:这就是 Agent 时代的想象力",
+        "tech_diagram": null,
+        "knowledge": "展望未来"
+      }
+    ]
+  },
+
+  "docker-container": {
+    "title": "Docker 容器入门",
+    "pages": 4,
+    "recommended_style": "manga",
+    "core_analogy": "容器 = 自带环境的便当盒，镜像 = 便当的菜谱",
+    "structure": [
+      {
+        "page": 1,
+        "scene": "小新抓狂，电脑屏幕显示报错信息",
+        "dialogue": "小新:明明在我电脑上能跑，为什么部署到服务器就报错！|码叔:经典问题，环境不一致|小新:怎么解决？|码叔:用 Docker",
+        "tech_diagram": null,
+        "knowledge": "引入环境一致性问题"
+      },
+      {
+        "page": 2,
+        "scene": "码叔拿着一个便当盒比喻",
+        "dialogue": "码叔:你点外卖，商家把饭菜打包好送来，打开就能吃对吧？|小新:对啊|码叔:Docker 容器就是这个便当盒，里面把代码和运行环境都打包好了",
+        "tech_diagram": "便当盒图，里面分层：代码层、依赖层、系统库层",
+        "knowledge": "容器的概念"
+      },
+      {
+        "page": 3,
+        "scene": "白板上画着镜像和容器的关系",
+        "dialogue": "小新:那镜像是什么？|码叔:镜像就是便当的菜谱，容器是按菜谱做出来的便当|小新:一个菜谱可以做很多份便当？|码叔:完全正确！",
+        "tech_diagram": "一个镜像(菜谱)指向多个容器(便当盒)",
+        "knowledge": "镜像与容器的关系"
+      },
+      {
+        "page": 4,
+        "scene": "小新开心地运行 docker run 命令",
+        "dialogue": "小新:所以我把项目打包成镜像，到哪都能用同一个环境跑起来！|码叔:没错，'在我机器上能跑'这个借口以后就不存在了",
+        "tech_diagram": null,
+        "knowledge": "总结"
+      }
+    ]
+  },
+
+  "rag-explained": {
+    "title": "RAG 检索增强生成",
+    "pages": 4,
+    "recommended_style": "manga",
+    "core_analogy": "RAG = 开卷考试，先查资料再回答",
+    "structure": [
+      {
+        "page": 1,
+        "scene": "小新问 AI 一个公司内部问题，AI 瞎编答案",
+        "dialogue": "小新:AI，我们公司的报销流程是什么？|AI:一般公司的报销流程是...|小新:这答案完全不对啊！|码叔:因为AI不知道你们公司的规定",
+        "tech_diagram": null,
+        "knowledge": "LLM 没有私有知识的问题"
+      },
+      {
+        "page": 2,
+        "scene": "码叔解释开卷考试的比喻",
+        "dialogue": "码叔:普通AI像闭卷考试，只能靠记忆回答|小新:那怎么让它知道我们的资料？|码叔:用RAG，让AI先'翻书'再回答，就像开卷考试",
+        "tech_diagram": "对比：闭卷(只有大脑) vs 开卷(大脑+书本)",
+        "knowledge": "RAG 的核心思想"
+      },
+      {
+        "page": 3,
+        "scene": "展示 RAG 的工作流程",
+        "dialogue": "码叔:用户提问时，系统先去知识库检索相关资料，然后把资料和问题一起发给AI|小新:所以AI就能基于真实资料回答了！",
+        "tech_diagram": "流程图：用户提问 → 检索知识库 → 拼接Prompt → LLM回答",
+        "knowledge": "RAG 工作流程"
+      },
+      {
+        "page": 4,
+        "scene": "小新试用 RAG 系统，得到准确的公司报销流程答案",
+        "dialogue": "小新:这次答案完全正确！原来要先填OA单...|码叔:这就是RAG的威力，让AI能回答你的私有知识",
+        "tech_diagram": null,
+        "knowledge": "RAG 的价值"
+      }
+    ]
+  }
+}
